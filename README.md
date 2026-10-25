@@ -24,6 +24,14 @@ flutter build apk --release
 flutter build appbundle --release
 ```
 
+### Vercel web deployment
+
+Import the repository into Vercel and add `WEATHER_API_KEY` as an Environment
+Variable for the Production environment. The checked-in `vercel.json` installs
+Flutter, generates the web platform files, creates the ignored `.env`, runs
+analysis, and deploys `build/web`. Do not paste `>>` from PowerShell prompts
+into Git commands.
+
 Before publishing, configure a private Android upload keystore and signing
 properties outside source control. Do not commit the keystore or passwords.
 Use `keytool -genkeypair`, keep the resulting `.jks` outside this repository,
