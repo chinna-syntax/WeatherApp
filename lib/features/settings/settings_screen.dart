@@ -149,7 +149,7 @@ class _SwitchRow extends StatelessWidget {
         title: Text(label, style: NimbusTypography.body),
         value: value,
         onChanged: onChanged,
-        activeColor: NimbusColors.accent,
+        activeThumbColor: NimbusColors.accent,
       );
 }
 
@@ -159,7 +159,7 @@ class _ThemeRow extends StatelessWidget {
   final ValueChanged<NimbusThemeMode> onChanged;
   @override
   Widget build(BuildContext context) => DropdownButtonFormField<NimbusThemeMode>(
-        value: settings.themeMode,
+        initialValue: settings.themeMode,
         dropdownColor: const Color(0xFF1A2030),
         decoration: InputDecoration(
           labelText: NimbusStrings.theme,
