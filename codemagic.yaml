@@ -17,6 +17,9 @@ workflows:
       - name: Set up Environment File
         script: |
           echo "WEATHER_API_KEY=$WEATHER_API_KEY" > .env
+      - name: Enable Web Platform Support
+        script: |
+          flutter create . --platforms web
       - name: Get Flutter dependencies
         script: |
           flutter pub get
