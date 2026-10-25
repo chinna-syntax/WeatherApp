@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import '../../../core/utils/formatters.dart';
 import '../../../design/tokens/colors.dart';
 import '../../../design/tokens/typography.dart';

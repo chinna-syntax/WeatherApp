@@ -1,5 +1,5 @@
 import 'package:intl/intl.dart';
-import '../core/strings.dart';
+import '../strings.dart';
 
 class Formatters {
   Formatters._();

@@ -12,7 +12,6 @@ import '../../design/tokens/colors.dart';
 import '../../design/tokens/spacing.dart';
 import '../../design/tokens/typography.dart';
 import '../../design/widgets/sky_background.dart';
-import '../../design/widgets/press_scale.dart';
 import '../home/home_controller.dart';
 import '../../core/settings/settings_controller.dart';
 

@@ -40,7 +40,6 @@ class SavedCitiesNotifier extends Notifier<List<SavedCity>> {
   }
 
   CacheService get _cache => ref.read(cacheServiceProvider);
-  LocationService get _location => ref.read(locationServiceProvider);
 
   Future<void> _load() async {
     final cities = await _cache.loadSavedCities();
@@ -146,6 +145,7 @@ class HomeController extends Notifier<HomeState> {
 
   WeatherRepository get _repo => ref.read(weatherRepositoryProvider);
   CacheService get _cache => ref.read(cacheServiceProvider);
+  LocationService get _location => ref.read(locationServiceProvider);
 
   /// Load weather for [query]. Uses cache unless [forceRefresh] is true.
   Future<void> loadWeather(String query, {bool forceRefresh = false}) async {

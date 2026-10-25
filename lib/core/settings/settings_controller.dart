@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -55,8 +54,10 @@ class SettingsNotifier extends Notifier<NimbusSettings> {
   Future<void> _load() async {
     final prefs = await SharedPreferences.getInstance();
     final themeIndex = prefs.getInt('${_prefix}theme') ?? 0;
-    final safeThemeIndex =
-        themeIndex.clamp(0, NimbusThemeMode.values.length - 1) as int;
+    final safeThemeIndex = themeIndex.clamp(
+      0,
+      NimbusThemeMode.values.length - 1,
+    );
     state = NimbusSettings(
       useCelsius: prefs.getBool('${_prefix}celsius') ?? true,
       useKph: prefs.getBool('${_prefix}kph') ?? true,
