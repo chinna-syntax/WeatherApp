@@ -1,7 +1,7 @@
 {
   "version": 2,
   "framework": null,
-  "installCommand": "if [ ! -x flutter/bin/flutter ]; then git clone --depth 1 --branch stable https://github.com/flutter/flutter.git flutter; fi; flutter/bin/flutter config --enable-web --no-analytics; flutter/bin/flutter precache --web",
+  "installCommand": "export FLUTTER_ALLOW_SUPERUSER=1; if [ ! -x flutter/bin/flutter ]; then git clone --depth 1 --branch stable https://github.com/flutter/flutter.git flutter; fi; flutter/bin/flutter config --enable-web --no-analytics; flutter/bin/flutter precache --web",
   "buildCommand": "bash vercel-build.sh",
   "outputDirectory": "build/web",
   "rewrites": [

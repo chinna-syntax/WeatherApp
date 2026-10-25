@@ -3,6 +3,7 @@ set -euo pipefail
 
 export PATH="$PWD/flutter/bin:$PATH"
 export CI=true
+export FLUTTER_ALLOW_SUPERUSER=1
 
 if [ -z "${WEATHER_API_KEY:-}" ]; then
   echo "WEATHER_API_KEY is not configured in Vercel."
