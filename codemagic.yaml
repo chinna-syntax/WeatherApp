@@ -16,15 +16,18 @@ workflows:
     scripts:
       - name: Set up Environment File
         script: |
-          echo "WEATHER_API_KEY=\$WEATHER_API_KEY" > .env
+          echo "WEATHER_API_KEY=$WEATHER_API_KEY" > .env
       - name: Enable Web Platform Support
         script: |
           flutter create . --platforms web
       - name: Get Flutter dependencies
         script: |
           flutter pub get
+      - name: Analyze Flutter Web Sources
+        script: |
+          flutter analyze
       - name: Build Flutter Web App
         script: |
-          flutter build web --release
+          flutter build web --release --verbose
     artifacts:
       - build/web/**/*
