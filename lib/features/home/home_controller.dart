@@ -1,6 +1,5 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../../core/errors/app_failure.dart';
 import '../../data/models/weather_models.dart';
 import '../../data/repositories/weather_repository.dart';

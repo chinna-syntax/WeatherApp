@@ -1,5 +1,6 @@
 /// WeatherAPI forecast response — hand-written fromJson, null-safe.
 /// Parse defensively: every field has a fallback so missing keys never crash.
+library;
 
 class WeatherResponse {
   const WeatherResponse({
