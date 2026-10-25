@@ -1,4 +1,3 @@
-# Codemagic configuration for Flutter Web Deployment
 workflows:
   web-workflow:
     name: Flutter Web Build
@@ -6,7 +5,7 @@ workflows:
     instance_type: mac_mini_m1
     environment:
       groups:
-        - Environment # This links to the secret API key you will add in Codemagic
+        - Environment
       vars:
         CM_FLUTTER_CHANNEL: "stable"
     triggering:
@@ -25,7 +24,4 @@ workflows:
         script: |
           flutter build web --release
     artifacts:
-      - build/web/**
-    publishing:
-      web:
-        custom_domain: false
+      - build/web/**/*
