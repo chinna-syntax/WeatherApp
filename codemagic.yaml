@@ -1,0 +1,31 @@
+# Codemagic configuration for Flutter Web Deployment
+workflows:
+  web-workflow:
+    name: Flutter Web Build
+    max_build_duration: 30
+    instance_type: mac_mini_m1
+    environment:
+      groups:
+        - Environment # This links to the secret API key you will add in Codemagic
+      vars:
+        CM_FLUTTER_CHANNEL: "stable"
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: 'main'
+    scripts:
+      - name: Set up Environment File
+        script: |
+          echo "WEATHER_API_KEY=$WEATHER_API_KEY" > .env
+      - name: Get Flutter dependencies
+        script: |
+          flutter pub get
+      - name: Build Flutter Web App
+        script: |
+          flutter build web --release
+    artifacts:
+      - build/web/**
+    publishing:
+      web:
+        custom_domain: false
